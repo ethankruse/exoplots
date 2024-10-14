@@ -4,6 +4,6 @@ channels:
 dependencies:
   - numpy
   - pandas
-  - bokeh==3.4.0
+  - bokeh==3.6.0
   - astropy
   - astroquery
