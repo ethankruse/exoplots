@@ -1483,12 +1483,12 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # 351 TESS got the period wrong by 2x. TOI-561 was 2 transits of different
     # planets.
     ignores = ['TOI-2011.03','TOI-2221.01', 'TOI-4581.02', 'TOI-5980.01',
-               'TOI-1847.01', 'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01',
+               'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01',
                'TOI-6087.01', 'TOI-1386.01', 'TOI-4862.01', 'TOI-6962.01',
                'TOI-2447.01', 'TOI-2529.01', 'TOI-6883.01', 'TOI-6984.01',
                'TOI-1408.02']
     conname = ['HD 136352 d', 'AU Mic b', 'KOI-94 e', 'Kepler-37 d',
-               'NGTS-11 b', 'HD 152843 c', 'TOI-216.02', 'Kepler-858 b',
+               'HD 152843 c', 'TOI-216.02', 'Kepler-858 b',
                'Kepler-134 b', 'TOI-1386 b', 'NGTS-30 b', 'K2-79 b',
                'TOI-2447 b', 'TOI-2529 b', 'TIC 393818343 b', 'K2-26 b',
                'TOI-1408 c']
