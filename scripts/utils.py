@@ -385,25 +385,22 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # avoid a defrag warning without dealing with cleaning up the code
     dfcon = dfcon.copy()
 
-    # XXX: notify archive
     ct = 0
     for ii in np.arange(dfcon['masse'].size):
         r1 = dfcon.at[ii, 'pl_rade_reflink']
         r2 = dfcon.at[ii, 'pl_radj_reflink']
         if r1 != r2:
             ct += 1
-    assert ct == 73
+    assert ct == 0
     # jupiter/earth radius ratio
     radratio = (const.R_jup/const.R_earth).value
     badrj = (np.isfinite(dfcon['radj']) ^ np.isfinite(dfcon['rade']))
-    # XXX: notify archive
-    assert badrj.sum() == 1
+    assert badrj.sum() == 0
     badrj1 = (np.isfinite(dfcon['radj_err1']) ^ np.isfinite(dfcon['rade_err1']))
-    assert badrj1.sum() == 71
+    assert badrj1.sum() == 0
     badrj2 = (np.isfinite(dfcon['radj_err2']) ^ np.isfinite(dfcon['rade_err2']))
-    assert badrj2.sum() == 71
-    # XXX: notify archive 2. this has gotten worse and is no longer true.
-    # assert np.allclose(badrj, badrj1) and np.allclose(badrj, badrj2)
+    assert badrj2.sum() == 0
+    assert np.allclose(badrj, badrj1) and np.allclose(badrj, badrj2)
 
     # remove calculated values from true radii. we'll make a calculated
     # column later
