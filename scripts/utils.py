@@ -1581,7 +1581,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-6029.01', 'TOI-6034.01', 'TOI-6086.01', 'TOI-6255.01',
                 'TOI-6982.01', 'TOI-2420.01', 'TOI-2485.01',
                 'TOI-1883.01', 'TOI-2274.01', 'TOI-2768.01',
-                'TOI-7066.01', 'TOI-7067.01',
+                'TOI-7066.01', 'TOI-7067.01', 'TOI-5713.01', 'TOI-6002.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
