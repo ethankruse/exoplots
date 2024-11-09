@@ -308,12 +308,12 @@ def load_data(updated_koi_params=True, only_candidates=True):
     dfcon.rename(columns=renames, inplace=True)
     # replace the long name with just TESS
     full = 'Transiting Exoplanet Survey Satellite (TESS)'
-    dfcon['facility'].replace(full, 'TESS', inplace=True)
+    dfcon['facility'] = dfcon['facility'].replace(full, 'TESS')
 
-    dfcon['pl_bmasse_reflink'].replace(np.nan, '', inplace=True)
-    dfcon['pl_bmassj_reflink'].replace(np.nan, '', inplace=True)
-    dfcon['pl_rade_reflink'].replace(np.nan, '', inplace=True)
-    dfcon['pl_radj_reflink'].replace(np.nan, '', inplace=True)
+    dfcon['pl_bmasse_reflink'] = dfcon['pl_bmasse_reflink'].replace(np.nan, '')
+    dfcon['pl_bmassj_reflink'] = dfcon['pl_bmassj_reflink'].replace(np.nan, '')
+    dfcon['pl_rade_reflink'] = dfcon['pl_rade_reflink'].replace(np.nan, '')
+    dfcon['pl_radj_reflink'] = dfcon['pl_radj_reflink'].replace(np.nan, '')
 
     # set all of these planets as confirmed
     dfcon['disposition'] = 'Confirmed'
@@ -616,8 +616,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
     dfkoi.rename(columns=renames, inplace=True)
 
     # make KOI strings into the format we expect
-    dfkoi['name'].replace(to_replace='K0+', value='KOI-', regex=True,
-                          inplace=True)
+    dfkoi['name'] = dfkoi['name'].replace(to_replace='K0+', value='KOI-',
+                                          regex=True)
 
     assert (~np.isfinite(dfkoi['insol']) | (dfkoi['insol'] >= 0)).all()
     assert (~np.isfinite(dfkoi['semi_au']) | (dfkoi['semi_au'] > 0)).all()
@@ -650,8 +650,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
     dfs = []
     for ifile in allkois:
         df = pd.read_csv(ifile)
-        df['kepoi_name'].replace(to_replace='K0+', value='KOI-',
-                                 regex=True, inplace=True)
+        df['kepoi_name'] = df['kepoi_name'].replace(to_replace='K0+',
+                                                    value='KOI-', regex=True)
         dfs.append(df)
 
     # find the first time a particular KOI number is mentioned and set its year
@@ -798,8 +798,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
         koistars = pd.read_csv(koistarsfile)
         koiplanets = pd.read_csv(koiplanetsfile)
 
-        koiplanets['id_planet'].replace(to_replace='K0+', value='KOI-',
-                                        regex=True, inplace=True)
+        koiplanets['id_planet'] = koiplanets['id_planet'].replace(to_replace='K0+', value='KOI-', regex=True)
 
         koicon = dfkoi['disposition'] == 'Confirmed'
         koican = dfkoi['disposition'] == 'Candidate'
@@ -1421,14 +1420,14 @@ def load_data(updated_koi_params=True, only_candidates=True):
     assert (~np.isfinite(dftoi['period']) | (dftoi['period'] > 0)).all()
 
     # things that don't have a disposition get PC
-    dftoi['disposition'].replace(np.nan, 'PC', inplace=True)
+    dftoi['disposition'] = dftoi['disposition'].replace(np.nan, 'PC')
     # change this to the status we want to report
-    dftoi['disposition'].replace('PC', 'Candidate', inplace=True)
-    dftoi['disposition'].replace('KP', 'Confirmed', inplace=True)
-    dftoi['disposition'].replace('CP', 'Confirmed', inplace=True)
-    dftoi['disposition'].replace('APC', 'Candidate', inplace=True)
-    dftoi['disposition'].replace('FA', 'False Positive', inplace=True)
-    dftoi['disposition'].replace('FP', 'False Positive', inplace=True)
+    dftoi['disposition'] = dftoi['disposition'].replace('PC', 'Candidate')
+    dftoi['disposition'] = dftoi['disposition'].replace('KP', 'Confirmed')
+    dftoi['disposition'] = dftoi['disposition'].replace('CP', 'Confirmed')
+    dftoi['disposition'] = dftoi['disposition'].replace('APC', 'Candidate')
+    dftoi['disposition'] = dftoi['disposition'].replace('FA', 'False Positive')
+    dftoi['disposition'] = dftoi['disposition'].replace('FP', 'False Positive')
     assert np.unique(dftoi['disposition']).size == 3
 
     # make these useful degrees like all the other catalogs

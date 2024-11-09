@@ -19,7 +19,7 @@ jobs:
     strategy:
       # it should only run once, and python 3.10 is as good as any
       matrix:
-        python-version: ['3.10']
+        python-version: ['3.12']
 
     steps:
       # check out the repository to make changes
