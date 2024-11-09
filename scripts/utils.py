@@ -1431,8 +1431,9 @@ def load_data(updated_koi_params=True, only_candidates=True):
     assert np.unique(dftoi['disposition']).size == 3
 
     # make these useful degrees like all the other catalogs
-    dftoi['ra'] = Angle(dftoi['RA'], unit='hourangle').degree
-    dftoi['dec'] = Angle(dftoi['Dec'], unit='degree').degree
+    breakpoint()
+    dftoi['ra'] = Angle(dftoi['RA'].values, unit='hourangle').degree
+    dftoi['dec'] = Angle(dftoi['Dec'].values, unit='degree').degree
 
     # assume symmetrical errors as they seem to do
     dftoi['rade_err2'] = -1 * dftoi['rade_err1']
