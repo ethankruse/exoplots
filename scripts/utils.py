@@ -1950,7 +1950,7 @@ csv_creation = """
     });
     """
 
-deselect = """
+deselect = r"""
 const nglyphs = glyphs.length;
 var some = 0;
 for (let nn = 0; nn < nglyphs; nn++) {
@@ -2014,7 +2014,7 @@ if (urls.length == 1){
 }
 """
 
-sldeselect = """
+sldeselect = r"""
 const nglyphs = glyphs.length;
 var some = 0;
 var loop = 0;
@@ -2070,7 +2070,7 @@ while (some == 0 && loop < 3){
 }
 """
 
-reset = """
+reset = r"""
 const nglyphs = glyphs.length;
 for (let nn = 0; nn < nglyphs; nn++) {
     var glyph = glyphs[nn];
@@ -2199,7 +2199,7 @@ else {
 }
 """
 
-singleslide = """
+singleslide = r"""
 var nglyphs = glyphs.length;
 var some = 0;
 var loop = 0;
