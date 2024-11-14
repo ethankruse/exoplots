@@ -1482,12 +1482,12 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01',
                'TOI-6087.01', 'TOI-1386.01', 'TOI-4862.01', 'TOI-6962.01',
                'TOI-2447.01', 'TOI-2529.01', 'TOI-6883.01', 'TOI-6984.01',
-               'TOI-1408.02']
+               'TOI-1408.02', 'TOI-7068.01']
     conname = ['HD 136352 d', 'AU Mic b', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b',
                'Kepler-134 b', 'TOI-1386 b', 'NGTS-30 b', 'K2-79 b',
                'TOI-2447 b', 'TOI-2529 b', 'TIC 393818343 b', 'K2-26 b',
-               'TOI-1408 c']
+               'TOI-1408 c', 'Kepler-1514 b']
     # we know what these are, and they have paper trails of submitted papers
     # though some were submitted way back in 2014 and still in limbo
     # some are newly submitted and waiting to be accepted but are
@@ -1580,7 +1580,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-6029.01', 'TOI-6034.01', 'TOI-6086.01', 'TOI-6255.01',
                 'TOI-6982.01', 'TOI-2420.01', 'TOI-2485.01',
                 'TOI-1883.01', 'TOI-2274.01', 'TOI-2768.01',
-                'TOI-7066.01', 'TOI-7067.01', 'TOI-5713.01', 'TOI-6002.01',
+                'TOI-5713.01', 'TOI-6002.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
@@ -1597,8 +1597,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
     tobeadded = []
     tbc = np.zeros(len(tobeconf), dtype=bool)
     # single transits that should be set as confirmed
-    nopermatch = ['TOI-6697.02', 'TOI-1835.02', 'TOI-7068.01']
-    confmatch = ['HD 114082 b', 'HD 110067 d', 'Kepler-1514 b']
+    nopermatch = ['TOI-6697.02', 'TOI-1835.02']
+    confmatch = ['HD 114082 b', 'HD 110067 d']
     singconf = np.zeros(len(nopermatch), dtype=bool)
     singcands = ['TOI-5523.01']
     singc = np.zeros(len(singcands), dtype=bool)
