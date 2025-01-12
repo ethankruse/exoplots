@@ -1483,12 +1483,12 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01', 'TOI-561.04',
                'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01',
                'TOI-2447.01', 'TOI-2529.01', 'TOI-6883.01', 'TOI-6984.01',
-               'TOI-1408.02', 'TOI-7068.01']
+               'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01']
     conname = ['HD 136352 d', 'AU Mic b', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b',
                'TOI-2447 b', 'TOI-2529 b', 'TIC 393818343 b', 'K2-26 b',
-               'TOI-1408 c', 'Kepler-1514 b']
+               'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b']
     # we know what these are, and they have paper trails of submitted papers
     # though some were submitted way back in 2014 and still in limbo
     # some are newly submitted and waiting to be accepted but are
@@ -1502,7 +1502,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-6101.01', 'TOI-6170.01', 'TOI-5678.01', 'TOI-603.01',
                'TOI-1105.01', 'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01',
                'TOI-2215.01', 'TOI-5688.01',
-               'TOI-6383.01', 'TOI-7041.01']
+               'TOI-6383.01', 'TOI-7041.01', 'TOI-6038.01']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
