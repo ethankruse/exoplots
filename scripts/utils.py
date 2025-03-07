@@ -1502,7 +1502,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-1239.01', 'TOI-1774.01', 'TOI-263.01', 'TOI-3422.01',
                'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03',
                'TOI-6101.01', 'TOI-6170.01', 'TOI-5678.01', 'TOI-603.01',
-               'TOI-1105.01', 'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01',
+               'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01',
                'TOI-2215.01', 'TOI-7041.01', 'TOI-512.01']
     earlycps = []
 
@@ -1581,8 +1581,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-5616.01', 'TOI-5634.01', 'TOI-5720.01', 'TOI-6008.01',
                 'TOI-6029.01', 'TOI-6034.01', 'TOI-6086.01', 'TOI-6255.01',
                 'TOI-6982.01', 'TOI-2420.01', 'TOI-2485.01',
-                'TOI-1883.01', 'TOI-2274.01', 'TOI-2768.01',
-                'TOI-5713.01', 'TOI-6002.01',
+                'TOI-1883.01', 'TOI-2274.01', 'TOI-2768.01', 'TOI-6002.01',
                 'TOI-1301.01', 'TOI-1630.01', 'TOI-1659.01', 'TOI-1716.01',
                 'TOI-1744.01', 'TOI-1768.01', 'TOI-1772.01', 'TOI-1777.01',
                 'TOI-1782.01', 'TOI-1782.02', 'TOI-2211.01', 'TOI-4638.01',
@@ -1590,6 +1589,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-6963.01', 'TOI-4504.01', 'TOI-4504.02',
                 'TOI-1295.01', 'TOI-2580.01', 'TOI-5108.01', 'TOI-5786.01',
                 'TOI-6016.01', 'TOI-6130.01', 'TOI-6276.01', 'TOI-6276.02',
+                'TOI-2328.01', 'TOI-2537.01', 'TOI-3837.01', 'TOI-5027.01',
+                'TOI-5110.01', 'TOI-6628.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
