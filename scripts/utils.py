@@ -1462,7 +1462,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
            'TOI-5090.01', 'TOI-4571.01', 'TOI-6970.01', 'TOI-4454.01',
            'TOI-2336.01', 'TOI-2844.01', 'TOI-3577.01', 'TOI-3755.01',
            'TOI-4462.01', 'TOI-4737.01', 'TOI-4759.01', 'TOI-5240.01',
-           'TOI-5467.01', 'TOI-5882.01']
+           'TOI-5467.01', 'TOI-5882.01', 'TOI-6508.01']
     for ibd in bds:
         bd = np.where(dftoi['name'] == ibd)[0][0]
         assert dftoi.loc[bd, 'disposition'] == 'Confirmed'
