@@ -432,7 +432,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # stellar or planet radius measurement
     getrad = (dfcon['flag_tran'] & np.isfinite(dfcon['tran_depth_ppm']) &
               ((~np.isfinite(dfcon['rade'])) | (~np.isfinite(dfcon['st_rad']))))
-    assert getrad.sum() == 0
+    # XXX: BD+05 4868 A b, disintigrating planet doesn't have radius
+    assert getrad.sum() == 1
 
     # set whether these were observed by Kepler or K2
     dfcon['flag_kepler'] = False
@@ -525,10 +526,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # planet parameters are either NaN or > 0
     assert (~np.isfinite(dfcon['period']) | (dfcon['period'] > 0)).all()
     assert (~np.isfinite(dfcon['semi_au']) | (dfcon['semi_au'] > 0)).all()
-    # XXX: while they're truncating at 2 decimal places, BD-21 397 c is broken
-    good = (~np.isfinite(dfcon['insol']) | (dfcon['insol'] > 0))
-    # assert (~np.isfinite(dfcon['insol']) | (dfcon['insol'] > 0)).all()
-    assert (~good).sum() == 1
+    assert (~np.isfinite(dfcon['insol']) | (dfcon['insol'] > 0)).all()
     assert (~np.isfinite(dfcon['rade']) | (dfcon['rade'] > 0)).all()
     assert (~np.isfinite(dfcon['rade_err1']) | (dfcon['rade_err1'] >= 0)).all()
     assert (~np.isfinite(dfcon['rade_err2']) | (dfcon['rade_err2'] <= 0)).all()
@@ -1485,12 +1483,12 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01', 'TOI-561.04',
                'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01',
                'TOI-2447.01', 'TOI-2529.01', 'TOI-6883.01', 'TOI-6984.01',
-               'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01']
+               'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02']
     conname = ['HD 136352 d', 'AU Mic b', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b',
                'TOI-2447 b', 'TOI-2529 b', 'TIC 393818343 b', 'K2-26 b',
-               'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b']
+               'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c']
     # we know what these are, and they have paper trails of submitted papers
     # though some were submitted way back in 2014 and still in limbo
     # some are newly submitted and waiting to be accepted but are
@@ -1550,60 +1548,39 @@ def load_data(updated_koi_params=True, only_candidates=True):
     assert len(earlycps) == 0
 
     # these are now confirmed and need to be updated as such
-    tobeconf = ['TOI-1194.01', 'TOI-1420.01', 'TOI-5344.01', 'TOI-2134.01',
-                'TOI-4481.01', 'TOI-4641.01', 'TOI-2266.01', 'TOI-5747.01',
-                'TOI-1347.01', 'TOI-1347.02', 'TOI-771.01', 'TOI-871.01',
-                'TOI-1467.01', 'TOI-1739.01', 'TOI-1778.01', 'TOI-1994.01',
-                'TOI-2068.01', 'TOI-4559.01', 'TOI-5799.01', 'TOI-128.01',
+    tobeconf = ['TOI-5344.01', 'TOI-4481.01', 'TOI-4641.01', 'TOI-5747.01',
+                'TOI-771.01', 'TOI-871.01', 'TOI-4559.01', 'TOI-5799.01',
                 'TOI-260.01', 'TOI-261.01', 'TOI-266.01', 'TOI-741.01',
                 'TOI-286.01', 'TOI-286.02', 'TOI-406.01', 'TOI-486.01',
                 'TOI-554.01', 'TOI-554.02', 'TOI-654.01', 'TOI-663.01',
                 'TOI-663.02', 'TOI-663.03', 'TOI-669.01', 'TOI-757.01',
-                'TOI-762.01', 'TOI-782.01', 'TOI-815.01', 'TOI-880.02',
-                'TOI-907.01', 'TOI-1174.01', 'TOI-1180.01', 'TOI-1184.01',
-                'TOI-1224.01', 'TOI-1224.02', 'TOI-1244.01', 'TOI-1247.01',
-                'TOI-1248.01', 'TOI-1249.01', 'TOI-1269.01', 'TOI-1279.01',
-                'TOI-1410.01', 'TOI-1437.01', 'TOI-1443.01', 'TOI-1448.01',
-                'TOI-1450.01', 'TOI-1451.01', 'TOI-1472.01', 'TOI-1473.01',
-                'TOI-1669.01', 'TOI-1683.01', 'TOI-1691.01', 'TOI-1723.01',
-                'TOI-1742.01', 'TOI-1753.01', 'TOI-1758.01', 'TOI-1775.01',
-                'TOI-1776.01', 'TOI-1794.01', 'TOI-1798.01', 'TOI-1798.02',
-                'TOI-1799.01', 'TOI-1806.01', 'TOI-1823.01', 'TOI-1824.01',
-                'TOI-1836.02', 'TOI-1855.01', 'TOI-2015.01', 'TOI-2088.01',
-                'TOI-2107.01', 'TOI-2120.01', 'TOI-2128.01', 'TOI-2134.02',
-                'TOI-2368.01', 'TOI-2374.01', 'TOI-2379.01', 'TOI-2384.01',
+                'TOI-762.01', 'TOI-782.01', 'TOI-880.02', 'TOI-907.01',
                 'TOI-2714.01', 'TOI-2981.01', 'TOI-3071.01', 'TOI-3218.01',
                 'TOI-3261.01', 'TOI-3321.01', 'TOI-3353.01', 'TOI-3894.01',
                 'TOI-3919.01', 'TOI-4153.01', 'TOI-4320.01', 'TOI-4379.01',
-                'TOI-4443.01', 'TOI-4495.01', 'TOI-4527.01',
-                'TOI-4602.01', 'TOI-4633.01', 'TOI-4914.01', 'TOI-5082.01',
-                'TOI-5218.01', 'TOI-5232.01', 'TOI-5301.01', 'TOI-5388.01',
-                'TOI-5616.01', 'TOI-5634.01', 'TOI-5720.01', 'TOI-6008.01',
-                'TOI-6029.01', 'TOI-6034.01', 'TOI-6086.01', 'TOI-6255.01',
-                'TOI-6982.01', 'TOI-2420.01', 'TOI-2485.01',
-                'TOI-1883.01', 'TOI-2274.01', 'TOI-2768.01', 'TOI-6002.01',
-                'TOI-1301.01', 'TOI-1630.01', 'TOI-1659.01', 'TOI-1716.01',
-                'TOI-1744.01', 'TOI-1768.01', 'TOI-1772.01', 'TOI-1777.01',
-                'TOI-1782.01', 'TOI-1782.02', 'TOI-2211.01', 'TOI-4638.01',
-                'TOI-5726.01', 'TOI-6442.01',
-                'TOI-6963.01', 'TOI-4504.01', 'TOI-4504.02',
-                'TOI-1295.01', 'TOI-2580.01', 'TOI-5108.01', 'TOI-5786.01',
-                'TOI-6016.01', 'TOI-6130.01', 'TOI-6276.01', 'TOI-6276.02',
-                'TOI-2328.01', 'TOI-2537.01', 'TOI-3837.01', 'TOI-5027.01',
+                'TOI-4443.01', 'TOI-4495.01', 'TOI-4527.01', 'TOI-4602.01',
+                'TOI-4633.01', 'TOI-4914.01', 'TOI-5082.01', 'TOI-5218.01',
+                'TOI-5232.01', 'TOI-5301.01', 'TOI-5388.01', 'TOI-5616.01',
+                'TOI-5634.01', 'TOI-5720.01', 'TOI-6008.01', 'TOI-6029.01',
+                'TOI-6034.01', 'TOI-6086.01', 'TOI-6255.01', 'TOI-6982.01',
+                'TOI-2768.01', 'TOI-6002.01', 'TOI-4638.01', 'TOI-5726.01',
+                'TOI-6442.01', 'TOI-6963.01', 'TOI-4504.01', 'TOI-4504.02',
+                'TOI-5108.01', 'TOI-5786.01', 'TOI-6016.01', 'TOI-6130.01',
+                'TOI-6276.01', 'TOI-6276.02', 'TOI-3837.01', 'TOI-5027.01',
                 'TOI-5110.01', 'TOI-6628.01', 'TOI-4364.01', 'TOI-5143.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
                 'TOI-2410.01', 'TOI-2425.01', 'TOI-2455.01', 'TOI-2639.01',
                 'TOI-4540.01', 'TOI-4549.01', 'TOI-4608.01', 'TOI-4611.01',
-                'TOI-4615.01', 'TOI-4619.01', 'TOI-5073.01',
-                'TOI-5102.01', 'TOI-5103.01', 'TOI-5105.01', 'TOI-5116.01',
-                'TOI-5137.01', 'TOI-5140.01', 'TOI-5154.01', 'TOI-5158.01',
-                'TOI-5161.01', 'TOI-5165.01', 'TOI-5167.01', 'TOI-5171.01',
-                'TOI-5175.01', 'TOI-5176.01', 'TOI-5115.01', 'TOI-5480.01',
-                'TOI-5522.01', 'TOI-5538.01', 'TOI-5539.01', 'TOI-5544.01',
-                'TOI-5545.01', 'TOI-5561.01', 'TOI-6831.01', 'TOI-6832.01',
-                'TOI-6840.01', 'TOI-6906.01', 'TOI-6966.01']
+                'TOI-4615.01', 'TOI-4619.01', 'TOI-5073.01', 'TOI-5102.01',
+                'TOI-5103.01', 'TOI-5105.01', 'TOI-5116.01', 'TOI-5137.01',
+                'TOI-5140.01', 'TOI-5154.01', 'TOI-5158.01', 'TOI-5161.01',
+                'TOI-5165.01', 'TOI-5167.01', 'TOI-5171.01', 'TOI-5175.01',
+                'TOI-5176.01', 'TOI-5115.01', 'TOI-5480.01', 'TOI-5522.01',
+                'TOI-5538.01', 'TOI-5539.01', 'TOI-5544.01', 'TOI-5545.01',
+                'TOI-5561.01', 'TOI-6831.01', 'TOI-6832.01', 'TOI-6840.01',
+                'TOI-6906.01', 'TOI-6966.01']
     tobeadded = []
     tbc = np.zeros(len(tobeconf), dtype=bool)
     # single transits that should be set as confirmed
