@@ -1481,14 +1481,16 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # planets.
     ignores = ['TOI-2011.03','TOI-2221.01', 'TOI-4581.02', 'TOI-5980.01',
                'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01', 'TOI-561.04',
-               'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01',
+               'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01', 'TOI-266.02',
                'TOI-2447.01', 'TOI-2529.01', 'TOI-6883.01', 'TOI-6984.01',
-               'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02']
+               'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02',
+               'TOI-406.02']
     conname = ['HD 136352 d', 'AU Mic b', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
-               'Kepler-134 b', 'NGTS-30 b', 'K2-79 b',
+               'Kepler-134 b', 'NGTS-30 b', 'K2-79 b', 'HIP 8152 c',
                'TOI-2447 b', 'TOI-2529 b', 'TIC 393818343 b', 'K2-26 b',
-               'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c']
+               'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c',
+               'TOI-406 c']
     # we know what these are, and they have paper trails of submitted papers
     # though some were submitted way back in 2014 and still in limbo
     # some are newly submitted and waiting to be accepted but are
@@ -1500,8 +1502,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-1239.01', 'TOI-1774.01', 'TOI-263.01', 'TOI-3422.01',
                'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03',
                'TOI-6101.01', 'TOI-6170.01', 'TOI-5678.01', 'TOI-603.01',
-               'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01',
-               'TOI-1454.01']
+               'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
@@ -1548,26 +1549,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     assert len(earlycps) == 0
 
     # these are now confirmed and need to be updated as such
-    tobeconf = ['TOI-5344.01', 'TOI-4481.01', 'TOI-4641.01', 'TOI-5747.01',
-                'TOI-771.01', 'TOI-871.01', 'TOI-4559.01', 'TOI-5799.01',
-                'TOI-260.01', 'TOI-261.01', 'TOI-266.01', 'TOI-741.01',
-                'TOI-286.01', 'TOI-286.02', 'TOI-406.01', 'TOI-486.01',
-                'TOI-554.01', 'TOI-554.02', 'TOI-654.01', 'TOI-663.01',
-                'TOI-663.02', 'TOI-663.03', 'TOI-669.01', 'TOI-757.01',
-                'TOI-762.01', 'TOI-782.01', 'TOI-880.02', 'TOI-907.01',
-                'TOI-2714.01', 'TOI-2981.01', 'TOI-3071.01', 'TOI-3218.01',
-                'TOI-3261.01', 'TOI-3321.01', 'TOI-3353.01', 'TOI-3894.01',
-                'TOI-3919.01', 'TOI-4153.01', 'TOI-4320.01', 'TOI-4379.01',
-                'TOI-4443.01', 'TOI-4495.01', 'TOI-4527.01', 'TOI-4602.01',
-                'TOI-4633.01', 'TOI-4914.01', 'TOI-5082.01', 'TOI-5218.01',
-                'TOI-5232.01', 'TOI-5301.01', 'TOI-5388.01', 'TOI-5616.01',
-                'TOI-5634.01', 'TOI-5720.01', 'TOI-6008.01', 'TOI-6029.01',
-                'TOI-6034.01', 'TOI-6086.01', 'TOI-6255.01', 'TOI-6982.01',
-                'TOI-2768.01', 'TOI-6002.01', 'TOI-4638.01', 'TOI-5726.01',
-                'TOI-6442.01', 'TOI-6963.01', 'TOI-4504.01', 'TOI-4504.02',
-                'TOI-5108.01', 'TOI-5786.01', 'TOI-6016.01', 'TOI-6130.01',
-                'TOI-6276.01', 'TOI-6276.02', 'TOI-3837.01', 'TOI-5027.01',
-                'TOI-5110.01', 'TOI-6628.01', 'TOI-4364.01', 'TOI-5143.01',
+    tobeconf = ['TOI-4364.01', 'TOI-5143.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
