@@ -1501,7 +1501,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-682.01', 'TOI-1054.01', 'TOI-1203.01', 'TOI-1230.01',
                'TOI-1239.01', 'TOI-1774.01', 'TOI-263.01', 'TOI-3422.01',
                'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03',
-               'TOI-6101.01', 'TOI-6170.01', 'TOI-5678.01', 'TOI-603.01',
+               'TOI-5678.01', 'TOI-603.01',
                'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01']
     earlycps = []
 
@@ -1549,7 +1549,9 @@ def load_data(updated_koi_params=True, only_candidates=True):
     assert len(earlycps) == 0
 
     # these are now confirmed and need to be updated as such
-    tobeconf = ['TOI-4364.01', 'TOI-5143.01',
+    tobeconf = ['TOI-4364.01', 'TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
+                'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
+                'TOI-6135.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
