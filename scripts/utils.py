@@ -1133,7 +1133,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # the rest are usually a NaN period
     # V1298 e is a refined period from a single transit in K2 to another with
     # TESS
-    k2exclude = ['HD 3167 c', 'HD 3167 d', 'HD 3167 e', 'HIP 41378 d',
+    k2exclude = ['HD 3167 b', 'HD 3167 c', 'HD 3167 d', 'HD 3167 e', 'HIP 41378 d',
                  'HIP 41378 e', 'HIP 41378 f', 'K2-132 b', 'K2-189 b',
                  'K2-19 c', 'K2-22 b', 'K2-24 c', 'K2-290 b', 'K2-290 c',
                  'K2-97 b', 'TRAPPIST-1 b', 'TRAPPIST-1 c', 'TRAPPIST-1 d',
@@ -1551,7 +1551,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # these are now confirmed and need to be updated as such
     tobeconf = ['TOI-4364.01', 'TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
                 'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
-                'TOI-6135.01',
+                'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
