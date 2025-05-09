@@ -1484,13 +1484,13 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01', 'TOI-266.02',
                'TOI-2447.01', 'TOI-2529.01', 'TOI-6883.01', 'TOI-6984.01',
                'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02',
-               'TOI-406.02']
+               'TOI-406.02', 'TOI-2285.01']
     conname = ['HD 136352 d', 'AU Mic b', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b', 'HIP 8152 c',
                'TOI-2447 b', 'TOI-2529 b', 'TIC 393818343 b', 'K2-26 b',
                'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c',
-               'TOI-406 c']
+               'TOI-406 c', 'TOI-2285 b']
     # we know what these are, and they have paper trails of submitted papers
     # though some were submitted way back in 2014 and still in limbo
     # some are newly submitted and waiting to be accepted but are
@@ -1551,7 +1551,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # these are now confirmed and need to be updated as such
     tobeconf = ['TOI-4364.01', 'TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
                 'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
-                'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01',
+                'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01', 'TOI-6324.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
