@@ -1460,7 +1460,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
            'TOI-5090.01', 'TOI-4571.01', 'TOI-6970.01', 'TOI-4454.01',
            'TOI-2336.01', 'TOI-2844.01', 'TOI-3577.01', 'TOI-3755.01',
            'TOI-4462.01', 'TOI-4737.01', 'TOI-4759.01', 'TOI-5240.01',
-           'TOI-5467.01', 'TOI-5882.01', 'TOI-6508.01']
+           'TOI-5467.01', 'TOI-5882.01', 'TOI-6508.01', 'TOI-2155.01']
     for ibd in bds:
         bd = np.where(dftoi['name'] == ibd)[0][0]
         assert dftoi.loc[bd, 'disposition'] == 'Confirmed'
@@ -1501,7 +1501,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-682.01', 'TOI-1054.01', 'TOI-1203.01', 'TOI-1230.01',
                'TOI-1239.01', 'TOI-1774.01', 'TOI-263.01', 'TOI-3422.01',
                'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03',
-               'TOI-5678.01', 'TOI-603.01',
+               'TOI-5678.01', 'TOI-603.01', 'TOI-5573.01',
                'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01']
     earlycps = []
 
@@ -1552,6 +1552,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     tobeconf = ['TOI-4364.01', 'TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
                 'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
                 'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01', 'TOI-6324.01',
+                'TOI-1803.01', 'TOI-1803.02', 'TOI-2005.01', 'TOI-4189.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 # K2 candidates
