@@ -17,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'skip')"
     strategy:
-      # it should only run once, and python 3.10 is as good as any
+      # it should only run once, and python 3.14 is as good as any
       matrix:
-        python-version: ['3.12']
+        python-version: ['3.14']
 
     steps:
       # check out the repository to make changes
