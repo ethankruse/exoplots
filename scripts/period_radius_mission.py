@@ -75,7 +75,7 @@ solarleg = LegendItem(label='Solar System', renderers=[gg])
 for ii, imiss in enumerate(missions):
     # select the appropriate set of planets for each mission
     if imiss == 'Other':
-        good = ((~np.in1d(dfpl['facility'], missions)) &
+        good = ((~np.isin(dfpl['facility'], missions)) &
                 np.isfinite(dfpl['rade']) & np.isfinite(dfpl['period']) &
                 dfpl['flag_tran'] & (dfpl['disposition'] == 'Confirmed'))
     else:

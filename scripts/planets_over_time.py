@@ -62,7 +62,7 @@ pccumtots = []
 for ii, imeth in enumerate(methods):
     # select the appropriate set of planets for each mission
     if imeth == 'Other':
-        good = ((~np.in1d(dfpl['discoverymethod'], methods)) &
+        good = ((~np.isin(dfpl['discoverymethod'], methods)) &
                 (dfpl['disposition'] == 'Confirmed'))
     else:
         good = ((dfpl['discoverymethod'] == imeth) &

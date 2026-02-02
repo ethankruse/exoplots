@@ -113,7 +113,7 @@ for ifig in np.arange(4):
         # select the appropriate set of planets for each mission
         # make the confirmed planets more opaque and bigger
         if imiss == 'Other Transit':
-            good = ((~np.in1d(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
+            good = ((~np.isin(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
                     (np.isfinite(dfpl['rade']) |
                      np.isfinite(dfpl['rade_est'])) &
                     (np.isfinite(dfpl['masse']) |
@@ -124,7 +124,7 @@ for ifig in np.arange(4):
             alpha = 0.7
             size = 8
         elif imiss == 'Radial Velocity':
-            good = ((~np.in1d(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
+            good = ((~np.isin(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
                     (np.isfinite(dfpl['rade']) |
                      np.isfinite(dfpl['rade_est'])) &
                     (np.isfinite(dfpl['masse']) |
@@ -135,14 +135,14 @@ for ifig in np.arange(4):
             alpha = 0.7
             size = 8
         elif imiss == 'Other Methods':
-            good = ((~np.in1d(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
+            good = ((~np.isin(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
                     (np.isfinite(dfpl['rade']) |
                      np.isfinite(dfpl['rade_est'])) &
                     (np.isfinite(dfpl['masse']) |
                      np.isfinite(dfpl['masse_est'])) &
                     np.isfinite(dfpl['period']) &
                     (dfpl['disposition'] == 'Confirmed') &
-                    (~np.in1d(dfpl['discoverymethod'],
+                    (~np.isin(dfpl['discoverymethod'],
                               ['Radial Velocity', 'Transit'])))
             alpha = 0.7
             size = 8

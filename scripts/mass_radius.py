@@ -94,7 +94,7 @@ dfpl['radius_error_pct'] = radiuserror * 100
 for ii, imeth in enumerate(methods):
     # select the appropriate set of planets for each mission
     if imeth == 'Other':
-        good = ((~np.in1d(dfpl['discoverymethod'], methods)) &
+        good = ((~np.isin(dfpl['discoverymethod'], methods)) &
                 (~dfpl['discoverymethod'].str.contains('Timing')) &
                 np.isfinite(dfpl['masse']) & np.isfinite(dfpl['rade']) &
                 (dfpl['disposition'] == 'Confirmed'))

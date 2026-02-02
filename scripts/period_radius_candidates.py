@@ -103,7 +103,7 @@ for ifig in np.arange(2):
         # select the appropriate set of planets for each mission
         # make the confirmed planets more opaque and bigger
         if imiss == 'Other Confirmed':
-            good = ((~np.in1d(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
+            good = ((~np.isin(dfpl['facility'], ['Kepler', 'K2', 'TESS'])) &
                     np.isfinite(dfpl['rade']) & np.isfinite(dfpl['period']) &
                     dfpl['flag_tran'] & (dfpl['disposition'] == 'Confirmed'))
             alpha = 0.7

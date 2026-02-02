@@ -134,7 +134,7 @@ for fn, ifig in enumerate(np.arange(len(refwavs))):
                 # select the appropriate set of planets for each mission
                 # make the confirmed planets more opaque and bigger
                 if imiss == 'Other Confirmed':
-                    good = ((~np.in1d(dfpl['facility'],
+                    good = ((~np.isin(dfpl['facility'],
                                       ['Kepler', 'K2', 'TESS'])) &
                             np.isfinite(dfpl['teq']) & np.isfinite(dfpl[ikey]) &
                             (dfpl['disposition'] == 'Confirmed') &

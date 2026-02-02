@@ -107,7 +107,7 @@ for ifig in np.arange(4):
     for ii, idisc in enumerate(discovery):
         if ifig < 2:
             if idisc == 'Other':
-                good = ((~np.in1d(dfpl['discoverymethod'], discovery[:-1])) &
+                good = ((~np.isin(dfpl['discoverymethod'], discovery[:-1])) &
                         (np.isfinite(dfpl['rade']) |
                          np.isfinite(dfpl['rade_est'])) &
                         np.isfinite(dfpl['period']) &
@@ -121,7 +121,7 @@ for ifig in np.arange(4):
                         (dfpl['disposition'] == "Confirmed"))
         else:
             if idisc == 'Other':
-                good = ((~np.in1d(dfpl['discoverymethod'], discovery[:-1])) &
+                good = ((~np.isin(dfpl['discoverymethod'], discovery[:-1])) &
                         (np.isfinite(dfpl['masse']) |
                          np.isfinite(dfpl['masse_est'])) &
                         np.isfinite(dfpl['period']) &
