@@ -1507,15 +1507,12 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # some are newly submitted and waiting to be accepted but are
     # prematurely marked confirmed on ExoFOP
     waiting = ['TOI-126.01', 'TOI-143.01', 'TOI-295.01', 'TOI-626.01',
-               'TOI-657.01', 'TOI-840.01', 'TOI-857.01',
-               'TOI-1071.01', 'TOI-1603.01', 'TOI-2330.01', 'TOI-261.02',
-               'TOI-682.01', 'TOI-1054.01', 'TOI-1230.01',
-               'TOI-1239.01', 'TOI-1774.01', 'TOI-263.01', 'TOI-3422.01',
-               'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03',
-               'TOI-5678.01', 'TOI-603.01', 'TOI-1605.01', 'TOI-1828.01',
-               'TOI-1885.01', 'TOI-2215.01', 'TOI-1243.01', 'TOI-2267.01',
-               'TOI-2267.03', 'TOI-2431.01', 'TOI-3862.01',
-               'TOI-4529.01', 'TOI-5007.01', 'TOI-5788.01', 'TOI-5788.02',
+               'TOI-657.01', 'TOI-840.01', 'TOI-857.01', 'TOI-1071.01',
+               'TOI-1603.01', 'TOI-2330.01', 'TOI-1239.01', 'TOI-263.01',
+               'TOI-3422.01', 'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01',
+               'TOI-1260.03', 'TOI-5678.01', 'TOI-603.01', 'TOI-1605.01',
+               'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01', 'TOI-2267.01',
+               'TOI-2267.03', 'TOI-2431.01', 'TOI-3862.01', 'TOI-5007.01',
                'TOI-5812.02', 'TOI-5916.01', 'TOI-6158.01']
     earlycps = []
 
@@ -1567,7 +1564,6 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
                 'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01',
                 'TOI-1803.01', 'TOI-1803.02', 'TOI-2005.01', 'TOI-4189.01',
-
                 'TOI-880.01', 'TOI-1011.01', 'TOI-1117.01', 'TOI-2031.01',
                 'TOI-2169.01', 'TOI-2346.01', 'TOI-2382.01', 'TOI-2721.01',
                 'TOI-2876.01', 'TOI-2886.01', 'TOI-2969.01', 'TOI-2986.01',
@@ -1581,6 +1577,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-5386.01', 'TOI-5422.01', 'TOI-5489.01', 'TOI-5489.02',
                 'TOI-5592.01', 'TOI-5716.01', 'TOI-5728.01', 'TOI-5736.01',
                 'TOI-6303.01', 'TOI-6330.01', 'TOI-6420.01', 'TOI-7462.01',
+                'TOI-6716.01', 'TOI-7384.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 'TOI-7460.01',
