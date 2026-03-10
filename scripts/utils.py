@@ -1488,7 +1488,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # planets.
     ignores = ['TOI-2011.03', 'TOI-4581.02', 'TOI-5980.01',
                'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01', 'TOI-561.04',
-               'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01', 'TOI-266.02',
+               'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01',
                'TOI-2447.01', 'TOI-6883.01', 'TOI-6984.01',
                'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02',
                'TOI-406.02', 'TOI-2285.01', 'TOI-4465.01', 'TOI-6697.01',
@@ -1496,7 +1496,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2449.01', 'TOI-6669.01', 'TOI-7470.01', 'TOI-7513.02']
     conname = ['HD 136352 d', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
-               'Kepler-134 b', 'NGTS-30 b', 'K2-79 b', 'HIP 8152 c',
+               'Kepler-134 b', 'NGTS-30 b', 'K2-79 b',
                'TOI-2447 b', 'TIC 393818343 b', 'K2-26 b',
                'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c',
                'TOI-406 c', 'TOI-2285 b', 'TOI-4465 b', 'HD 114082 b',
@@ -1511,9 +1511,9 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-1603.01', 'TOI-2330.01', 'TOI-1239.01', 'TOI-263.01',
                'TOI-3422.01', 'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01',
                'TOI-1260.03', 'TOI-5678.01', 'TOI-603.01', 'TOI-1605.01',
-               'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01', 'TOI-2267.01',
-               'TOI-2267.03', 'TOI-2431.01', 'TOI-3862.01', 'TOI-5007.01',
-               'TOI-5812.02', 'TOI-5916.01', 'TOI-6158.01']
+               'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01', 'TOI-2431.01',
+               'TOI-3862.01', 'TOI-5007.01', 'TOI-5812.02', 'TOI-5916.01',
+               'TOI-6158.01', 'TOI-1080.01']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
@@ -1562,7 +1562,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # these are now confirmed and need to be updated as such
     tobeconf = ['TOI-4364.01', 'TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
                 'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
-                'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01',
+                'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01', 'TOI-2267.02',
                 'TOI-1803.01', 'TOI-1803.02', 'TOI-2005.01', 'TOI-4189.01',
                 'TOI-880.01', 'TOI-1011.01', 'TOI-1117.01', 'TOI-2031.01',
                 'TOI-2169.01', 'TOI-2346.01', 'TOI-2382.01', 'TOI-2721.01',
