@@ -315,6 +315,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
     dfcon['pl_rade_reflink'] = dfcon['pl_rade_reflink'].replace(np.nan, '')
     dfcon['pl_radj_reflink'] = dfcon['pl_radj_reflink'].replace(np.nan, '')
 
+    # low-tech df defrag to hide the warnings
+    dfcon = dfcon.copy()
     # set all of these planets as confirmed
     dfcon['disposition'] = 'Confirmed'
 
@@ -603,6 +605,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     #################
 
     print('Handling KOIs.')
+    dfkoi = dfkoi.copy()
     # make these not all caps
     dfkoi['disposition'] = dfkoi['koi_disposition'].str.title()
     assert np.unique(dfkoi['disposition']).size == 3
@@ -1145,7 +1148,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                  'TRAPPIST-1 e', 'TRAPPIST-1 f', 'TRAPPIST-1 g', 'TRAPPIST-1 h',
                  'V1298 Tau e', 'WASP-107 b', 'WASP-47 b', 'WASP-47 c',
                  'K2-79 b', 'K2-26 b', 'K2-32 b', 'K2-199 b', 'Wolf 503 b',
-                 'HD 106315 c', 'K2-25 b', 'K2-138 b']
+                 'HD 106315 c', 'K2-25 b', 'K2-138 b', 'WASP-107 c']
 
     isexclude = np.zeros(len(k2exclude), dtype=bool)
 
@@ -1512,8 +1515,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-3422.01', 'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01',
                'TOI-1260.03', 'TOI-5678.01', 'TOI-603.01', 'TOI-1605.01',
                'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01', 'TOI-2431.01',
-               'TOI-3862.01', 'TOI-5007.01', 'TOI-5812.02', 'TOI-5916.01',
-               'TOI-6158.01', 'TOI-1080.01']
+               'TOI-5812.02', 'TOI-6158.01', 'TOI-1232.01', 'TOI-4552.01',
+               'TOI-4616.01']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
@@ -1560,7 +1563,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     assert len(earlycps) == 0
 
     # these are now confirmed and need to be updated as such
-    tobeconf = ['TOI-4364.01', 'TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
+    tobeconf = ['TOI-5143.01', 'TOI-3791.01', 'TOI-4056.01',
                 'TOI-4672.01', 'TOI-5190.01', 'TOI-5288.01', 'TOI-5385.01',
                 'TOI-6135.01', 'TOI-3493.01', 'TOI-7398.01', 'TOI-2267.02',
                 'TOI-1803.01', 'TOI-1803.02', 'TOI-2005.01', 'TOI-4189.01',
@@ -1575,10 +1578,11 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-4961.01', 'TOI-5181.01', 'TOI-5210.01', 'TOI-5261.01',
                 'TOI-5300.01', 'TOI-5322.01', 'TOI-5340.01', 'TOI-5350.01',
                 'TOI-5386.01', 'TOI-5422.01', 'TOI-5489.01', 'TOI-5489.02',
-                'TOI-5592.01', 'TOI-5716.01', 'TOI-5728.01', 'TOI-5736.01',
+                'TOI-5592.01', 'TOI-5728.01', 'TOI-5736.01',
                 'TOI-6303.01', 'TOI-6330.01', 'TOI-6420.01', 'TOI-7462.01',
                 'TOI-6716.01', 'TOI-7384.01', 'TOI-4495.02',
                 'TOI-375.01', 'TOI-2133.01', 'TOI-5938.01', 'TOI-7009.01',
+                'TOI-2094.01', 'TOI-5292.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 'TOI-7460.01',
