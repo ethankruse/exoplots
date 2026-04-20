@@ -1492,7 +1492,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     ignores = ['TOI-2011.03', 'TOI-4581.02', 'TOI-5980.01',
                'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01', 'TOI-561.04',
                'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01',
-               'TOI-2447.01', 'TOI-6883.01', 'TOI-6984.01',
+               'TOI-2447.01', 'TOI-6984.01',
                'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02',
                'TOI-406.02', 'TOI-2285.01', 'TOI-4465.01', 'TOI-6697.01',
                'TOI-7456.01', 'TOI-7468.01', 'TOI-7473.01', 'TOI-2345.02',
@@ -1500,7 +1500,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     conname = ['HD 136352 d', 'KOI-94 e', 'Kepler-37 d',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b',
-               'TOI-2447 b', 'TIC 393818343 b', 'K2-26 b',
+               'TOI-2447 b', 'K2-26 b',
                'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c',
                'TOI-406 c', 'TOI-2285 b', 'TOI-4465 b', 'HD 114082 b',
                'Kepler-953 b', 'K2-199 c', 'Wolf 503 b', 'TOI-2345 c',
@@ -1515,7 +1515,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-3422.01', 'TOI-3666.01', 'TOI-5153.01', 'TOI-5812.01',
                'TOI-1260.03', 'TOI-5678.01', 'TOI-603.01', 'TOI-1605.01',
                'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01',
-               'TOI-5812.02', 'TOI-6158.01', 'TOI-4616.01']
+               'TOI-5812.02', 'TOI-6158.01', 'TOI-4616.01',
+               'TOI-5624.01', 'TOI-5624.02', 'TOI-5624.03', 'TOI-5624.04']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
