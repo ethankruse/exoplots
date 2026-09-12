@@ -1473,8 +1473,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
            'TOI-2119.01', 'TOI-1278.01', 'TOI-2543.01', 'TOI-5081.01',
            'TOI-5090.01', 'TOI-4571.01', 'TOI-6970.01', 'TOI-4454.01',
            'TOI-2336.01', 'TOI-2844.01', 'TOI-3577.01', 'TOI-3755.01',
-           'TOI-4462.01', 'TOI-4737.01', 'TOI-4759.01', 'TOI-5240.01',
-           'TOI-5467.01', 'TOI-5882.01', 'TOI-6508.01', 'TOI-2155.01',
+           'TOI-4737.01', 'TOI-5882.01', 'TOI-6508.01', 'TOI-2155.01',
            'TOI-4480.01', 'TOI-7019.01', 'TOI-7250.01', 'TOI-5401.01',
            'TOI-7154.01', 'TOI-7858.01', 'TOI-7903.01']
     for ibd in bds:
@@ -1521,8 +1520,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-657.01', 'TOI-840.01', 'TOI-857.01', 'TOI-1071.01',
                'TOI-2330.01', 'TOI-263.01', 'TOI-3422.01', 'TOI-3666.01',
                'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03', 'TOI-5678.01',
-               'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01', 'TOI-2215.01',
-               'TOI-4616.01', 'TOI-6697.01',
+               'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01',
+               'TOI-4616.01', 'TOI-6697.01', 'TOI-426.01',
 
                'TOI-213.01', 'TOI-248.01', 'TOI-435.01', 'TOI-783.01',
                'TOI-786.01', 'TOI-786.02', 'TOI-789.01',
@@ -1618,7 +1617,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-1105.01', 'TOI-1226.01', 'TOI-1269.02', 'TOI-1291.01',
                 'TOI-1466.01', 'TOI-1533.02', 'TOI-1718.01', 'TOI-1722.01',
                 'TOI-1732.01', 'TOI-1750.01', 'TOI-1756.01', 'TOI-1814.01',
-                'TOI-1839.01', 'TOI-1873.03', 'TOI-2040.01', 'TOI-2049.01',
+                'TOI-1873.03', 'TOI-2040.01', 'TOI-2049.01',
                 'TOI-2071.01', 'TOI-2092.01', 'TOI-2104.02', 'TOI-2200.01',
                 'TOI-2227.01', 'TOI-2453.01', 'TOI-2518.01', 'TOI-2578.01',
                 'TOI-2654.01', 'TOI-3457.01', 'TOI-3664.01', 'TOI-3896.01',
@@ -1654,9 +1653,9 @@ def load_data(updated_koi_params=True, only_candidates=True):
     tobeadded = []
     tbc = np.zeros(len(tobeconf), dtype=bool)
     # single transits that should be set as confirmed
-    nopermatch = ['TOI-1835.02', 'TOI-2065.01', 'TOI-6695.01',
+    nopermatch = ['TOI-1835.02', 'TOI-2065.01', 'TOI-6695.01', 'TOI-6893.01',
                   'TOI-6692.01', 'TOI-1422.02', 'TOI-2530.01']
-    confmatch = ['HD 110067 d', 'BEBOP-4 AB b', 'TOI-6695 b',
+    confmatch = ['HD 110067 d', 'BEBOP-4 AB b', 'TOI-6695 b', 'HD 715 b',
                  'TOI-6692 b', 'TOI-1422 c', 'TIC 52059926 b']
     singconf = np.zeros(len(nopermatch), dtype=bool)
     singcands = ['TOI-5523.01', 'TOI-1301.02', 'TOI-1772.02', 'TOI-125.04',
