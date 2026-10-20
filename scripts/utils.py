@@ -1502,7 +1502,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-406.02', 'TOI-2285.01', 'TOI-4465.01',
                'TOI-7456.01', 'TOI-7468.01', 'TOI-7473.01', 'TOI-2345.02',
                'TOI-2449.01', 'TOI-6669.01', 'TOI-7470.01', 'TOI-7513.02',
-               'TOI-6697.02', 'TOI-791.02', 'TOI-7909.01']
+               'TOI-6697.02', 'TOI-791.02', 'TOI-7909.01',
+               'TOI-1835.01', 'TOI-1835.02', 'TOI-6893.01']
     conname = ['HD 136352 d', 'KOI-94 e', 'Kepler-37 d', 'PH2 b',
                'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b', 'Kepler-1515 b',
@@ -1511,7 +1512,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-406 c', 'TOI-2285 b', 'TOI-4465 b',
                'Kepler-953 b', 'K2-199 c', 'Wolf 503 b', 'TOI-2345 c',
                'TOI-2449 b', 'NGTS-35 b', 'K2-32 b', 'HD 106315 c',
-               'HD 114082 b', 'TOI-791 c', 'Kepler-419 c']
+               'HD 114082 b', 'TOI-791 c', 'Kepler-419 c',
+               'HD 110067 b', 'HD 110067 d', 'HD 715 b',]
     # we know what these are, and they have paper trails of submitted papers
     # though some were submitted way back in 2014 and still in limbo
     # some are newly submitted and waiting to be accepted but are
@@ -1521,27 +1523,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2330.01', 'TOI-263.01', 'TOI-3422.01', 'TOI-3666.01',
                'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03', 'TOI-5678.01',
                'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01',
-               'TOI-4616.01', 'TOI-6697.01',
-
-               'TOI-213.01', 'TOI-248.01', 'TOI-435.01', 'TOI-783.01',
-               'TOI-786.01', 'TOI-786.02', 'TOI-789.01',
-               'TOI-797.01', 'TOI-873.01', 'TOI-1154.01', 'TOI-1245.01',
-               'TOI-1262.01', 'TOI-1281.01', 'TOI-1355.01', 'TOI-1432.01',
-               'TOI-1435.01', 'TOI-1441.01',
-               'TOI-2238.01', 'TOI-2245.01', 'TOI-2287.01', 'TOI-2293.01',
-               'TOI-2392.03', 'TOI-2426.01', 'TOI-2441.01', 'TOI-2540.01',
-               'TOI-3585.01', 'TOI-3851.01', 'TOI-4307.01', 'TOI-4310.01',
-               'TOI-4324.01', 'TOI-4443.02', 'TOI-4468.01', 'TOI-4468.02',
-               'TOI-4567.02', 'TOI-4724.01', 'TOI-4851.01', 'TOI-5177.01',
-               'TOI-5289.01', 'TOI-5493.03', 'TOI-5531.01',
-               'TOI-5543.01', 'TOI-5646.01', 'TOI-5696.02', 'TOI-5730.01',
-               'TOI-5739.01', 'TOI-5807.01', 'TOI-5947.01', 'TOI-5958.01',
-               'TOI-5961.01', 'TOI-5968.02', 'TOI-5997.01', 'TOI-6098.01',
-               'TOI-6174.01', 'TOI-6310.01', 'TOI-6434.01', 'TOI-6450.01',
-               'TOI-6647.01', 'TOI-6662.01', 'TOI-6729.01', 'TOI-6729.02',
-               'TOI-6884.01', 'TOI-7182.01', 'TOI-7389.01',
-               'TOI-7391.01', 'TOI-7475.01', 'TOI-7550.01',
-               'TOI-1806.02', 'TOI-1806.03']
+               'TOI-6697.01', 'TOI-1355.01', 'TOI-6884.01', 'TOI-7475.01']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
@@ -1635,6 +1617,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-6965.01', 'TOI-6965.02', 'TOI-7008.01', 'TOI-7155.01',
                 'TOI-7169.01', 'TOI-7333.01', 'TOI-7537.01', 'TOI-7639.01',
                 'TOI-7724.01',
+                'TOI-789.02', 'TOI-789.03', 'TOI-4499.02', 'TOI-5120.01',
+                'TOI-5699.01',
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 'TOI-7460.01', 'TOI-7910.01',
@@ -1653,13 +1637,13 @@ def load_data(updated_koi_params=True, only_candidates=True):
     tobeadded = []
     tbc = np.zeros(len(tobeconf), dtype=bool)
     # single transits that should be set as confirmed
-    nopermatch = ['TOI-1835.02', 'TOI-2065.01', 'TOI-6695.01', 'TOI-6893.01',
+    nopermatch = ['TOI-2065.01', 'TOI-6695.01',
                   'TOI-6692.01', 'TOI-1422.02', 'TOI-2530.01']
-    confmatch = ['HD 110067 d', 'BEBOP-4 AB b', 'TOI-6695 b', 'HD 715 b',
+    confmatch = ['BEBOP-4 AB b', 'TOI-6695 b',
                  'TOI-6692 b', 'TOI-1422 c', 'TIC 52059926 b']
     singconf = np.zeros(len(nopermatch), dtype=bool)
     singcands = ['TOI-5523.01', 'TOI-1301.02', 'TOI-1772.02', 'TOI-125.04',
-                 'TOI-941.02', 'TOI-1759.02']
+                 'TOI-941.02', 'TOI-1759.02', 'TOI-5696.03']
     singc = np.zeros(len(singcands), dtype=bool)
 
     # any candidates in the confirmed table get set as such
