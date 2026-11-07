@@ -1494,21 +1494,21 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # confirmed table. 2011, 2221 are single transits, so no period matching.
     # 351 TESS got the period wrong by 2x. TOI-561 was 2 transits of different
     # planets.
-    ignores = ['TOI-2011.03', 'TOI-4581.02', 'TOI-5980.01', 'TOI-7859.01',
-               'TOI-2319.01', 'TOI-216.02', 'TOI-6083.01', 'TOI-561.04',
+    ignores = ['TOI-2011.03', 'TOI-5980.01', 'TOI-7859.01',
+               'TOI-2319.01', 'TOI-216.02', 'TOI-561.04',
                'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01', 'TOI-7906.01',
                'TOI-2447.01', 'TOI-6984.01',
-               'TOI-1408.02', 'TOI-7068.01', 'TOI-2010.01', 'TOI-815.02',
+               'TOI-1408.02', 'TOI-2010.01', 'TOI-815.02',
                'TOI-406.02', 'TOI-2285.01', 'TOI-4465.01',
                'TOI-7456.01', 'TOI-7468.01', 'TOI-7473.01', 'TOI-2345.02',
                'TOI-2449.01', 'TOI-6669.01', 'TOI-7470.01', 'TOI-7513.02',
                'TOI-6697.02', 'TOI-791.02', 'TOI-7909.01',
                'TOI-1835.01', 'TOI-1835.02', 'TOI-6893.01']
-    conname = ['HD 136352 d', 'KOI-94 e', 'Kepler-37 d', 'PH2 b',
-               'HD 152843 c', 'TOI-216.02', 'Kepler-858 b', 'TOI-561 e',
+    conname = ['HD 136352 d', 'Kepler-37 d', 'PH2 b',
+               'HD 152843 c', 'TOI-216.02', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b', 'Kepler-1515 b',
                'TOI-2447 b', 'K2-26 b',
-               'TOI-1408 c', 'Kepler-1514 b', 'TOI-2010 b', 'TOI-815 c',
+               'TOI-1408 c', 'TOI-2010 b', 'TOI-815 c',
                'TOI-406 c', 'TOI-2285 b', 'TOI-4465 b',
                'Kepler-953 b', 'K2-199 c', 'Wolf 503 b', 'TOI-2345 c',
                'TOI-2449 b', 'NGTS-35 b', 'K2-32 b', 'HD 106315 c',
@@ -1523,8 +1523,8 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2330.01', 'TOI-263.01', 'TOI-3422.01', 'TOI-3666.01',
                'TOI-5153.01', 'TOI-5812.01', 'TOI-1260.03', 'TOI-5678.01',
                'TOI-1605.01', 'TOI-1828.01', 'TOI-1885.01',
-               'TOI-6697.01', 'TOI-1355.01', 'TOI-6884.01', 'TOI-7475.01',
-               'TOI-3686.01']
+               'TOI-6697.01', 'TOI-6884.01', 'TOI-7475.01', 'TOI-3686.01',
+               'TOI-4129.01']
     earlycps = []
 
     stillbad = np.zeros(len(ignores), dtype=bool)
@@ -1620,6 +1620,10 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-7724.01',
                 'TOI-789.02', 'TOI-789.03', 'TOI-4499.02', 'TOI-5120.01',
                 'TOI-5699.01',
+                'TOI-214.01', 'TOI-214.02', 'TOI-713.01', 'TOI-713.02',
+                'TOI-5217.01', 'TOI-5988.02', 'TOI-5994.02', 'TOI-6457.01',
+                'TOI-6649.01', 'TOI-6842.01', 'TOI-7025.01', 'TOI-7396.02',
+
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
                 'TOI-7460.01', 'TOI-7910.01',
@@ -1638,9 +1642,9 @@ def load_data(updated_koi_params=True, only_candidates=True):
     tobeadded = []
     tbc = np.zeros(len(tobeconf), dtype=bool)
     # single transits that should be set as confirmed
-    nopermatch = ['TOI-2065.01', 'TOI-6695.01',
+    nopermatch = ['TOI-2065.01', 'TOI-6695.01', 'TOI-5893.01', 'TOI-7176.01',
                   'TOI-6692.01', 'TOI-1422.02', 'TOI-2530.01']
-    confmatch = ['BEBOP-4 AB b', 'TOI-6695 b',
+    confmatch = ['BEBOP-4 AB b', 'TOI-6695 b', 'TOI-5893 b', 'TOI-7176 b',
                  'TOI-6692 b', 'TOI-1422 c', 'TIC 52059926 b']
     singconf = np.zeros(len(nopermatch), dtype=bool)
     singcands = ['TOI-5523.01', 'TOI-1301.02', 'TOI-1772.02', 'TOI-125.04',
