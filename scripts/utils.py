@@ -1494,7 +1494,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
     # confirmed table. 2011, 2221 are single transits, so no period matching.
     # 351 TESS got the period wrong by 2x. TOI-561 was 2 transits of different
     # planets.
-    ignores = ['TOI-2011.03', 'TOI-5980.01', 'TOI-7859.01',
+    ignores = ['TOI-2011.03', 'TOI-5980.01', 'TOI-7859.01', 'TOI-6041.01',
                'TOI-2319.01', 'TOI-216.02', 'TOI-561.04',
                'TOI-6087.01', 'TOI-4862.01', 'TOI-6962.01', 'TOI-7906.01',
                'TOI-2447.01', 'TOI-6984.01',
@@ -1504,7 +1504,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'TOI-2449.01', 'TOI-6669.01', 'TOI-7470.01', 'TOI-7513.02',
                'TOI-6697.02', 'TOI-791.02', 'TOI-7909.01',
                'TOI-1835.01', 'TOI-1835.02', 'TOI-6893.01']
-    conname = ['HD 136352 d', 'Kepler-37 d', 'PH2 b',
+    conname = ['HD 136352 d', 'Kepler-37 d', 'PH2 b', 'TOI-6041 b',
                'HD 152843 c', 'TOI-216.02', 'TOI-561 e',
                'Kepler-134 b', 'NGTS-30 b', 'K2-79 b', 'Kepler-1515 b',
                'TOI-2447 b', 'K2-26 b',
@@ -1617,12 +1617,10 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-6699.01', 'TOI-6707.01', 'TOI-6752.01', 'TOI-6954.01',
                 'TOI-6965.01', 'TOI-6965.02', 'TOI-7008.01', 'TOI-7155.01',
                 'TOI-7169.01', 'TOI-7333.01', 'TOI-7537.01', 'TOI-7639.01',
-                'TOI-7724.01',
-                'TOI-789.02', 'TOI-789.03', 'TOI-4499.02', 'TOI-5120.01',
-                'TOI-5699.01',
-                'TOI-214.01', 'TOI-214.02', 'TOI-713.01', 'TOI-713.02',
-                'TOI-5217.01', 'TOI-5988.02', 'TOI-5994.02', 'TOI-6457.01',
-                'TOI-6649.01', 'TOI-6842.01', 'TOI-7025.01', 'TOI-7396.02',
+                'TOI-7724.01', 'TOI-789.02', 'TOI-789.03', 'TOI-4499.02',
+                'TOI-5120.01', 'TOI-5699.01', 'TOI-214.01', 'TOI-214.02',
+                'TOI-713.01', 'TOI-713.02', 'TOI-5217.01', 'TOI-6457.01',
+                'TOI-6649.01', 'TOI-6842.01', 'TOI-7025.01', 
 
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
