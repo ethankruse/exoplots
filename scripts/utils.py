@@ -305,7 +305,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'pl_orbeccen': 'eccen', 'disc_facility': 'facility',
                'tran_flag': 'flag_tran', 'sy_dist': 'distance_pc',
                'disc_year': 'year_discovered'}
-    dfcon.rename(columns=renames, inplace=True)
+    dfcon = dfcon.rename(columns=renames)
     # replace the long name with just TESS
     full = 'Transiting Exoplanet Survey Satellite (TESS)'
     dfcon['facility'] = dfcon['facility'].replace(full, 'TESS')
@@ -623,7 +623,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'koi_steff': 'st_teff', 'kepoi_name': 'name',
                'koi_kmag': 'Kmag', 'koi_depth': 'tran_depth_ppm',
                'koi_duration': 'tran_dur_hr', 'koi_jmag': 'Jmag'}
-    dfkoi.rename(columns=renames, inplace=True)
+    dfkoi = dfkoi.rename(columns=renames)
 
     # make KOI strings into the format we expect
     dfkoi['name'] = dfkoi['name'].replace(to_replace='K0+', value='KOI-',
@@ -695,7 +695,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
 
     # KOI-1101.02 is a known duplicate of 1101.01. Remove it.
     assert len(dfkoi[dfkoi['name'] == 'KOI-1101.02']) == 1
-    dfkoi.drop(dfkoi[dfkoi['name'] == 'KOI-1101.02'].index, inplace=True)
+    dfkoi = dfkoi.drop(dfkoi[dfkoi['name'] == 'KOI-1101.02'].index)
     assert len(dfkoi[dfkoi['name'] == 'KOI-1101.02']) == 0
 
     # these were removed as FPs from the confirmed table, but not the KOI list
@@ -1052,7 +1052,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'pl_bmasseerr2': 'masse_err2', 'pl_bmassj': 'massj',
                'pl_bmassjerr1': 'massj_err1', 'pl_bmassjerr2': 'massj_err2',
                'st_lum': 'st_log_lum'}
-    dfk2.rename(columns=renames, inplace=True)
+    dfk2 = dfk2.rename(columns=renames)
 
     # ignore the microlensing one in the K2 table. it's handled in the confirmed
     lens = dfk2['name'] == 'K2-2016-BLG-0005L b'
@@ -1398,7 +1398,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                'Planet Insolation (Earth Flux)': 'insol',
                'Depth (ppm)': 'tran_depth_ppm',
                'Duration (hours)': 'tran_dur_hr'}
-    dftoi.rename(columns=renames, inplace=True)
+    dftoi = dftoi.rename(columns=renames)
 
     # set these to strings we'd want to show in a figure
     dftoi['name'] = 'TOI-' + dftoi['TOI'].astype(str)
@@ -1588,7 +1588,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-4961.01', 'TOI-5181.01', 'TOI-5210.01', 'TOI-5261.01',
                 'TOI-5300.01', 'TOI-5322.01', 'TOI-5340.01', 'TOI-5350.01',
                 'TOI-5386.01', 'TOI-5422.01', 'TOI-5489.01', 'TOI-5489.02',
-                'TOI-5592.01', 'TOI-5728.01', 'TOI-5736.01',
+                'TOI-5592.01', 'TOI-5736.01',
                 'TOI-6303.01', 'TOI-6330.01', 'TOI-6420.01', 'TOI-7462.01',
                 'TOI-6716.01', 'TOI-7384.01', 'TOI-4495.02',
                 'TOI-375.01', 'TOI-2133.01', 'TOI-5938.01', 'TOI-7009.01',
@@ -1620,7 +1620,7 @@ def load_data(updated_koi_params=True, only_candidates=True):
                 'TOI-7724.01', 'TOI-789.02', 'TOI-789.03', 'TOI-4499.02',
                 'TOI-5120.01', 'TOI-5699.01', 'TOI-214.01', 'TOI-214.02',
                 'TOI-713.01', 'TOI-713.02', 'TOI-5217.01', 'TOI-6457.01',
-                'TOI-6649.01', 'TOI-6842.01', 'TOI-7025.01', 
+                'TOI-6649.01', 'TOI-6842.01', 'TOI-7025.01', 'TOI-4596.01',
 
                 # KOIs
                 'TOI-4444.01', 'TOI-4484.01', 'TOI-4588.01', 'TOI-1241.01',
