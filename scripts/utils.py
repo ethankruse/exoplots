@@ -105,7 +105,7 @@ def get_equilibrium_temperature(df, albedo: float = 0.3,
     Parameters
     ----------
     df : pandas dataframe
-        Dataframe assumed to have columns of 'st_log_lum' and 'semi_au' that
+        A dataframe assumed to have columns of 'st_log_lum' and 'semi_au' that
         contain a star's log10 solar luminosity and the planet's semi-major
         axis in AU respectively. These are the only parameters needed to get
         an equilibrium temperature
@@ -144,7 +144,7 @@ def get_esm(df, wavelength_micron: float = 7.5, scale: float = 4.29, **kwargs):
     Parameters
     ----------
     df : pandas dataframe
-        Dataframe assumed to have columns needed to calculate equilibrium
+        A dataframe assumed to have columns needed to calculate equilibrium
         temperature and ESM, namely: 'st_log_lum', 'semi_au', 'st_teff',
         'tran_depth_ppm', and 'Kmag' that respectively contain a star's log10
         solar luminosity, the planet's semi-major axis in AU, stellar effective
@@ -184,7 +184,7 @@ def get_tsm(df, scale: float = 0.19, **kwargs):
     Parameters
     ----------
     df : pandas dataframe
-        Dataframe assumed to have columns needed to calculate equilibrium
+        A dataframe assumed to have columns needed to calculate equilibrium
         temperature and TSM, namely: 'st_log_lum', 'semi_au', 'rade',
         'masse', 'masse_est', 'st_rad', and 'Jmag' that respectively contain
         a star's log10 solar luminosity, the planet's semi-major axis in AU,
